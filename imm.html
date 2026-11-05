@@ -863,13 +863,16 @@ function optimise(){const t0=performance.now();const moved=probeMoving();const k
 
 // ---------- real photographs on the machines ----------
 function photoFor(g){let info=null;g.traverse(o=>{if(!info&&o.userData&&o.userData.info)info=o.userData.info});if(!info)return null;
- if(info.r){if(info.r.kind==='na'||info.r.kind==='shared')return null;return (info.r.ph&&info.r.ph[0])||null}
+ if(info.r){if(info.r.kind==='na')return null;return (info.r.ph&&info.r.ph[0])||null}
  const PH=window.PHMAP||{};let ref=null;if(info.e)ref=info.e.lot;else if(info.data)ref=info.data[0];if(!ref)return null;
  for(const t of String(ref).split(/[\s+,·]+/)){if(PH[t]&&PH[t][0])return PH[t][0]}return null}
 const photoQueue=[];let photoBusy=0;
+// decode to a 512 x 384 canvas (works in every browser, keeps the photo upright); failed loads are retried up to 3 times
+function decodePhoto(bl){return new Promise((res,rej)=>{const im=new Image();const u=URL.createObjectURL(bl);im.onload=()=>{const c=document.createElement('canvas');c.width=512;c.height=384;c.getContext('2d').drawImage(im,0,0,512,384);URL.revokeObjectURL(u);res(c)};im.onerror=()=>{URL.revokeObjectURL(u);rej(0)};im.src=u})}
 function loadPhoto(job){photoBusy++;const done=()=>{photoBusy--;pumpPhotos()};
- fetch(job.url).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(bl=>('createImageBitmap' in window)?createImageBitmap(bl,{resizeWidth:512,resizeHeight:384,resizeQuality:'medium'}):new Promise((res,rej)=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=512;c.height=384;c.getContext('2d').drawImage(im,0,0,512,384);res(c)};im.onerror=rej;im.src=URL.createObjectURL(bl)}))
- .then(img=>{const t=new THREE.CanvasTexture(img);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;job.mat.map=t;job.mat.needsUpdate=true;job.mesh.visible=true;job.frame.visible=true;done()}).catch(done)}
+ fetch(job.url,job.n?{cache:'reload'}:undefined).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(decodePhoto)
+ .then(img=>{const t=new THREE.CanvasTexture(img);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;job.mat.map=t;job.mat.needsUpdate=true;job.mesh.visible=true;job.frame.visible=true;RL.photosLoaded=(RL.photosLoaded||0)+1;done()})
+ .catch(()=>{job.n=(job.n||0)+1;if(job.n<4)setTimeout(()=>{photoQueue.push(job);pumpPhotos()},1500*job.n);else RL.photosFailed=(RL.photosFailed||0)+1;done()})}
 function pumpPhotos(){while(photoBusy<4&&photoQueue.length)loadPhoto(photoQueue.shift())}
 function photoPanels(){if(window.NO_PHOTOS)return;const bb=new THREE.Box3(),sz=new THREE.Vector3(),ce=new THREE.Vector3();let n=0;
  pickables.forEach(g=>{const url=photoFor(g);if(!url)return;bb.setFromObject(g);if(bb.isEmpty())return;bb.getSize(sz);bb.getCenter(ce);if(sz.x<.8||sz.y<.8)return;
