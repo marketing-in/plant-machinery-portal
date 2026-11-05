@@ -58,98 +58,68 @@ h3{font:700 16.5px/1.25 var(--f-ui);margin:0}
 .pill{display:inline-block;font:600 10.5px/1 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;padding:5px 7px;border-radius:5px;background:var(--chip);color:var(--muted);white-space:nowrap}
 .pill.ok,.pill.alt{background:var(--ok-bg);color:var(--ok)}.pill.shared{background:var(--shr-bg);color:var(--shr)}.pill.na{background:var(--miss-bg);color:var(--miss)}.pill.bundled{background:var(--bund-bg);color:var(--bund)}.pill.suggest{background:var(--sug-bg);color:var(--sug)}
 .foot{font-size:12.5px;color:var(--muted);border-top:1px solid var(--rule);padding-top:14px;max-width:100ch}
-/* home (landing page) */
-#p-home{gap:56px}
-.hero{position:relative;overflow:hidden;isolation:isolate;border-radius:22px;color:#fff;background:linear-gradient(135deg,var(--hero-a) 0%,var(--hero-b) 58%,var(--hero-c) 100%);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,52px);align-items:center;padding:clamp(24px,4.6vw,60px)}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:34px 34px;-webkit-mask-image:linear-gradient(100deg,#000 0%,rgba(0,0,0,.4) 55%,transparent 85%);mask-image:linear-gradient(100deg,#000 0%,rgba(0,0,0,.4) 55%,transparent 85%)}
-.hero::after{content:"";position:absolute;z-index:-1;right:-12%;top:-35%;width:65%;height:130%;background:radial-gradient(closest-side,rgba(242,194,48,.17),transparent)}
-.hero .eyebrow{color:var(--safety);display:flex;align-items:center;gap:10px}
-.hero .eyebrow i{width:9px;height:9px;background:var(--safety);transform:rotate(45deg);display:inline-block;flex:none}
-.hero h1{color:#fff;font-size:clamp(32px,4.4vw,58px);line-height:1.03;margin-top:16px;letter-spacing:-.012em}
-.hero h1 em{font-style:normal;color:var(--safety)}
-.hero .lede{color:rgba(255,255,255,.8);font-size:clamp(15px,1.25vw,17px);max-width:56ch;margin-top:18px}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn.y{background:var(--safety);color:#17202b}
-.btn.lg{font-size:15px;padding:13px 20px;border-radius:10px}
-.btn3{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.34);color:#fff;background:rgba(255,255,255,.06);font:600 15px var(--f-ui);border-radius:10px;padding:12px 19px;text-decoration:none;white-space:nowrap}
-.btn3:hover{background:rgba(255,255,255,.13)}
-.hplants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:38px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
-.hplants a{color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:4px;min-width:0}
-.hplants b{font:700 14.5px/1.2 var(--f-disp)}
-.hplants span{font:500 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.hplants a:hover b{color:var(--safety)}
-.collage{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:12px;aspect-ratio:5/4.3;width:100%;max-width:100%}
-.collage figure{margin:0;position:relative;border-radius:14px;overflow:hidden;background:#0b1626;box-shadow:0 20px 44px rgba(0,0,0,.38);min-height:0}
-.collage figure:first-child{grid-row:1/3}
-.collage a{display:block;height:100%}
-.collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.collage a:hover img{transform:scale(1.035)}
-.collage figcaption{position:absolute;left:10px;bottom:10px;right:10px;pointer-events:none}
-.collage figcaption span{display:inline-block;font:600 10.5px var(--f-mono);letter-spacing:.07em;text-transform:uppercase;color:#fff;background:rgba(9,18,31,.8);padding:5px 8px;border-radius:5px;border-left:3px solid var(--safety)}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.hero>div:first-child>*{animation:rise .7s ease both}.hero>div:first-child>*:nth-child(2){animation-delay:.06s}.hero>div:first-child>*:nth-child(3){animation-delay:.12s}.hero>div:first-child>*:nth-child(4){animation-delay:.18s}.hero>div:first-child>*:nth-child(5){animation-delay:.24s}
-.collage{animation:rise .9s .15s ease both}
-@media (prefers-reduced-motion: reduce){.hero>div:first-child>*,.collage{animation:none}}
-.hsec{display:flex;flex-direction:column;gap:24px}
-.hsec>.sechead h2{font-size:clamp(25px,2.7vw,34px)}
-.hsec>.sechead .lede{font-size:16px}
-.prows{display:flex;flex-direction:column;gap:22px}
-.prow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);overflow:hidden;box-shadow:var(--shadow);border-radius:16px}
-.prow:nth-child(even) .pmedia{order:2}
-.pmedia{display:grid;grid-template-columns:1.9fr 1fr;grid-template-rows:1fr 1fr;gap:4px;background:var(--photo);min-height:390px}
-.pmedia a{position:relative;display:block;min-height:0;overflow:hidden}
-.pmedia a:first-child{grid-row:1/3}
-.pmedia img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.pmedia a:hover img{transform:scale(1.035)}
-.pmedia .bdg{position:absolute;left:10px;top:10px;font:600 10.5px var(--f-mono);letter-spacing:.05em;background:#17304f;color:#fff;padding:4px 7px;border-radius:4px;border-bottom:2px solid var(--safety)}
-.ptext{padding:clamp(22px,3.2vw,40px);display:flex;flex-direction:column;gap:12px;min-width:0}
-.ptext h2{font-size:clamp(25px,2.5vw,34px)}
-.ploc{display:flex;align-items:center;gap:7px;font:600 11.5px var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-.ploc svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;flex:none}
-.ptext p{margin:0;color:var(--muted);font-size:15px;max-width:60ch}
-.hl{font:600 10.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
-.hchips{display:flex;flex-wrap:wrap;gap:6px}
-.hchips a{font:600 12.5px var(--f-ui);text-decoration:none;color:var(--ink);background:var(--chip);border:1px solid transparent;border-radius:999px;padding:5px 11px}
-.hchips a:hover{border-color:var(--accent);color:var(--accent)}
-.ptext .row{margin-top:auto;padding-top:10px}
-.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px}
-.cap{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);border-radius:14px;transition:transform .2s ease,border-color .2s ease}
-.cap:hover{border-color:var(--accent);transform:translateY(-2px)}
-.cap .cv{aspect-ratio:16/10;background:var(--plan-floor);border-bottom:1px solid var(--rule);overflow:hidden;display:block;max-width:100%}
-.cap .cv>img{width:100%;height:100%;object-fit:cover;display:block}
-.cap .cv svg{width:100%;height:100%;display:block}
-.cap .fl3{display:flex;align-items:center;gap:5px;height:100%;padding:0 12px}
-.cap .fl3 img{flex:1;min-width:0;height:64%;object-fit:cover;border-radius:6px;border-top:3px solid var(--ok);display:block}
-.cap .fl3 i{color:var(--muted);font-style:normal;font-size:12px}
-.cap .cb{padding:15px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.cap .cb b{font:700 16.5px var(--f-disp)}
-.cap .cb span{font-size:13.5px;color:var(--muted)}
-.cap .cb em{margin-top:auto;padding-top:6px;font:600 12px var(--f-mono);font-style:normal;color:var(--accent)}
-.princ{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);padding:clamp(22px,3.2vw,40px);border-radius:16px;box-shadow:var(--shadow)}
-.princ>div{display:flex;flex-direction:column;gap:8px;min-width:0}
-.princ svg{width:30px;height:30px;stroke:var(--accent);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.princ b{font:700 17px var(--f-disp)}
-.princ span{font-size:14px;color:var(--muted)}
-.hfoot{display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:28px;align-items:start;border-top:1px solid var(--rule);padding-top:24px}
-.hfoot .brand2{display:flex;align-items:center;gap:10px;font:700 15px var(--f-disp)}
-.hfoot .brand2 i{width:12px;height:12px;background:var(--safety);transform:rotate(45deg);display:inline-block}
-.hfoot p{margin:10px 0 0;font-size:12.5px;color:var(--muted);max-width:86ch}
-.hfoot nav{display:flex;flex-direction:column;gap:7px}
-.hfoot nav a{font-weight:600;font-size:14px;text-decoration:none}
-.hfoot nav a:hover{text-decoration:underline}
-.plants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.pcard{overflow:hidden;display:flex;flex-direction:column;min-width:0}
-.pcard .mos{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:3px;aspect-ratio:16/10;background:var(--photo);max-width:100%}
-.pcard .mos img{width:100%;height:100%;object-fit:cover;display:block;min-height:0}
-.pcard .mos img:first-child{grid-row:1/3}
-.pcard .pb{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.pcard p{margin:0;color:var(--muted);font-size:14px}
-.ptag{font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.mini div{background:var(--chip);border-radius:6px;padding:6px 8px}
-.mini b{display:block;font:600 16px var(--f-mono);font-variant-numeric:tabular-nums}.mini span{font-size:10.5px;color:var(--muted)}
-.mini .m b{color:var(--miss)}
-.pcard .row{margin-top:auto}
+/* home: minimalist landing page, professional finish */
+body.is-home{background:var(--surface)}
+body.is-home .wrap{padding-bottom:0}
+#p-home{gap:clamp(56px,7vw,96px);padding-top:clamp(12px,3.4vw,48px)}
+.mhero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:end}
+.mk{display:flex;align-items:center;gap:10px}
+.mk i{width:9px;height:9px;background:var(--safety);transform:rotate(45deg);flex:none}
+.mhero h1{font:600 clamp(36px,4.9vw,66px)/1.04 var(--f-ui);letter-spacing:-.028em;margin:22px 0 0;text-wrap:balance}
+.mhero h1 span{color:var(--muted)}
+.mhero .lede{font-size:clamp(16px,1.3vw,18px);line-height:1.6;max-width:56ch;margin-top:24px}
+.mcta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:34px}
+.btn.lg,.btn2.lg{font-size:15px;padding:13px 22px;border-radius:6px}
+.btn2.lg{padding:12px 21px}
+.mfacts{margin:0;border-top:2px solid var(--ink);display:flex;flex-direction:column;gap:0;font-size:14.5px}
+.mfacts>div{display:grid;grid-template-columns:104px minmax(0,1fr);gap:16px;padding:15px 0;border-bottom:1px solid var(--rule)}
+.mfacts dt{font:600 11px/1.75 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mfacts dd{margin:0;font:400 14.5px/1.5 var(--f-ui);word-break:normal}
+.mbar{display:flex;align-items:center;gap:18px;margin:0 0 26px}
+.mbar::after{content:"";flex:1;height:1px;background:var(--rule)}
+.mbar h2{margin:0}
+.msec{scroll-margin-top:84px}
+.mplants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.6vw,36px)}
+.mplant{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);min-width:0}
+.mimg{position:relative;display:block;aspect-ratio:4/3;max-width:100%;border-radius:8px;overflow:hidden;background:var(--photo);margin-bottom:10px}
+.mimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.mplant:hover .mimg img{transform:scale(1.03)}
+.mcap{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px);font:500 11.5px/1.3 var(--f-ui);color:#fff;background:rgba(9,18,30,.74);padding:5px 9px;border-radius:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mmeta{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px solid var(--rule);padding-top:12px}
+.mno{font:600 12px var(--f-mono);letter-spacing:.06em;color:var(--accent)}
+.mloc{font:600 11px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right}
+.mname{font:600 clamp(20px,1.7vw,24px)/1.2 var(--f-ui);letter-spacing:-.015em;margin-top:2px}
+.mdesc{font-size:14.5px;line-height:1.6;color:var(--muted)}
+.mgo{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--accent);margin-top:auto;padding-top:8px}
+.mgo i{font-style:normal;transition:transform .2s ease}
+.mplant:hover .mname{color:var(--accent)}.mplant:hover .mgo i{transform:translateX(4px)}
+.mband{background:var(--chip);box-shadow:0 0 0 100vmax var(--chip);clip-path:inset(0 -100vmax);padding-block:clamp(44px,5.5vw,76px)}
+.mviews{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.75fr);gap:clamp(24px,6vw,96px);align-items:start}
+.mvh h2{font:600 clamp(26px,2.8vw,36px)/1.12 var(--f-ui);letter-spacing:-.02em;margin:14px 0 0}
+.mvh p{color:var(--muted);margin:12px 0 0;max-width:36ch}
+.mvlist{display:flex;flex-direction:column;border-top:2px solid var(--ink)}
+.mv{display:grid;grid-template-columns:40px minmax(0,190px) minmax(0,1fr) auto;gap:6px 20px;align-items:baseline;padding:19px 2px;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink)}
+.mv em{font:600 12px var(--f-mono);font-style:normal;letter-spacing:.06em;color:var(--accent)}
+.mv b{font-weight:600;font-size:16.5px}
+.mv span{color:var(--muted);font-size:15px}
+.mv i{font-style:normal;color:var(--muted);transition:transform .2s ease,color .2s ease}
+.mv:hover b{color:var(--accent)}.mv:hover i{color:var(--accent);transform:translateX(4px)}
+.hfoot{position:relative;margin-top:calc(-1 * clamp(56px,7vw,96px));background:var(--nav);color:var(--nav-ink);box-shadow:0 0 0 100vmax var(--nav);clip-path:inset(0 -100vmax -100vmax);padding-block:clamp(40px,5vw,60px) calc(26px + env(safe-area-inset-bottom,0px))}
+.hfoot::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--safety);box-shadow:0 0 0 100vmax var(--safety);clip-path:inset(0 -100vmax)}
+.hf-top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,.8fr);gap:28px 48px;align-items:start}
+.hfoot .brand2{display:flex;align-items:center;gap:10px;font:600 16px var(--f-ui)}
+.hfoot .brand2 i{width:11px;height:11px;background:var(--safety);transform:rotate(45deg);display:inline-block}
+.hf-brand p{margin:12px 0 0;font-size:14px;line-height:1.6;opacity:.74;max-width:44ch}
+.hf-col{display:flex;flex-direction:column;gap:9px;min-width:0}
+.hf-col b{font:600 11px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.62;margin-bottom:3px}
+.hf-col a{font-weight:500;font-size:14px;text-decoration:none;color:var(--nav-ink);opacity:.92}
+.hf-col a:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}
+.hf-bot{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16)}
+.hf-bot p{margin:0;font-size:12.5px;line-height:1.6;opacity:.62;max-width:120ch}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.mhero-main>*{animation:rise .8s ease both}.mhero-main>*:nth-child(2){animation-delay:.07s}.mhero-main>*:nth-child(3){animation-delay:.14s}.mhero-main>*:nth-child(4){animation-delay:.21s}
+.mfacts{animation:rise .9s .28s ease both}
+@media (prefers-reduced-motion: reduce){.mhero-main>*,.mfacts{animation:none}}
 /* plant header */
 .fhead{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:center}
 .fmos{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;border-radius:12px;overflow:hidden}
@@ -355,8 +325,11 @@ dt{color:var(--muted);font-size:12px}dd{margin:0;font-family:var(--f-mono);font-
 .desc{font-size:14px;line-height:1.6;margin:0}
 .note{font-size:13px;background:var(--chip);border-radius:8px;padding:9px 11px}
 .note.na{background:var(--miss-bg)}
-@media (max-width:980px){.plants{grid-template-columns:1fr}.fhead{grid-template-columns:1fr}.lrow{grid-template-columns:1fr;gap:4px}.hero{grid-template-columns:1fr}.prow{grid-template-columns:1fr}.prow:nth-child(even) .pmedia{order:0}.princ{grid-template-columns:1fr}.hfoot{grid-template-columns:1fr}}
-@media (max-width:560px){.hplants{grid-template-columns:1fr;gap:10px}.pmedia{min-height:280px}.collage{aspect-ratio:1/1}#p-home{gap:40px}.cta .btn,.cta .btn3{flex:1 1 auto;justify-content:center}}
+@media (max-width:1080px){.mhero{grid-template-columns:1fr;align-items:start;gap:40px}.mfacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}.mfacts>div{grid-template-columns:1fr;gap:4px;padding:14px 0 0;border-bottom:0}}
+@media (max-width:980px){.plants{grid-template-columns:1fr}.fhead{grid-template-columns:1fr}.lrow{grid-template-columns:1fr;gap:4px}.mviews{grid-template-columns:1fr}.hf-top{grid-template-columns:1fr 1fr}.hf-brand{grid-column:1/-1}}
+@media (max-width:760px){.mplants{grid-template-columns:1fr;gap:44px}.mv{grid-template-columns:32px minmax(0,1fr) auto;gap:4px 12px}.mv em{grid-column:1;grid-row:1}.mv b{grid-column:2;grid-row:1}.mv i{grid-column:3;grid-row:1}.mv span{grid-column:2/4;grid-row:2}
+ .mfacts{grid-template-columns:1fr}.mfacts>div{grid-template-columns:92px minmax(0,1fr);gap:14px;padding:13px 0;border-bottom:1px solid var(--rule)}}
+@media (max-width:520px){.hf-top{grid-template-columns:1fr}.mcta .btn.lg,.mcta .btn2.lg{flex:1 1 100%;justify-content:center}}
 @media (max-width:860px){.sheet{grid-template-columns:1fr}.sb{max-height:none}.viewer{grid-template-columns:1fr}.thumbs{flex-direction:row;max-height:none;overflow-x:auto}.thumbs button{flex:none;width:90px}.lot{grid-template-columns:110px minmax(0,1fr)}.lot .q{grid-column:2;text-align:left}.lot img{width:110px}}
 @media (max-width:520px){.brand span{display:none}.tile{width:136px}.mini{grid-template-columns:repeat(2,1fr)}.tabs a{padding-inline:9px}}
 @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important;transition:none!important}}
@@ -369,36 +342,37 @@ dt{color:var(--muted);font-size:12px}dd{margin:0;font-family:var(--f-mono);font-
 
 <main class="wrap">
 <section class="page col" id="p-home">
-  <div class="hero">
-    <div>
-      <div class="eyebrow"><i></i>Machinery analysis · three production plants</div>
-      <h1>Three production plants. <em>Every machine in its line.</em></h1>
-      <p class="lede">Each plant's equipment listing is mapped into halls and complete process lines. Every station shows the real machine with its original photographs, or is clearly marked NOT AVAILABLE where the listing has nothing.</p>
-      <div class="cta"><button class="btn y lg" id="h-explore">Explore the plants ↓</button><a class="btn3" href="#f1-3d">Walk the 3D halls →</a></div>
-      <div class="hplants" id="h-plants"></div>
+  <header class="mhero">
+    <div class="mhero-main">
+      <div class="eyebrow mk"><i></i>Machinery analysis · three production plants</div>
+      <h1>Three production plants. <span>Every machine in its line.</span></h1>
+      <p class="lede">Each plant's equipment listing is mapped into halls and complete process lines, with the original photographs of every machine and the missing stations clearly marked.</p>
+      <div class="mcta"><button class="btn lg" id="h-explore">Explore the plants</button><a class="btn2 lg" href="#f1-3d">Walk the 3D halls →</a></div>
     </div>
-    <div class="collage" id="h-collage"></div>
-  </div>
+    <dl class="mfacts" aria-label="At a glance">
+      <div><dt>Locations</dt><dd>Slovakia · Jászberény, Hungary · Luleå, Sweden</dd></div>
+      <div><dt>Industries</dt><dd>Display electronics · Domestic refrigerators · Automotive hot stamping</dd></div>
+      <div><dt>Source</dt><dd>Public equipment listings, with the original photographs of each machine</dd></div>
+    </dl>
+  </header>
 
-  <div class="hsec" id="h-plantsec">
-    <div class="sechead"><div class="eyebrow">The plants</div><h2>Documented station by station</h2><p class="lede">Open a plant for its site plan, the 2D station map, the flow of every line with original photographs, the live 3D halls, the machine list and the brochure.</p></div>
-    <div class="prows" id="plants"></div>
-  </div>
+  <section class="msec" id="h-plants" aria-labelledby="mp-title">
+    <div class="mbar"><h2 class="eyebrow" id="mp-title">The plants</h2></div>
+    <div class="mplants" id="plants"></div>
+  </section>
 
-  <div class="hsec">
-    <div class="sechead"><div class="eyebrow">Inside every plant</div><h2>See each plant the way you need it</h2><p class="lede">The same machines, from the site plan down to a single station, in five connected views.</p></div>
-    <div class="caps" id="h-caps"></div>
-  </div>
-
-  <div class="card princ">
-    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.6"/></svg><b>Real machines, original photos</b><span>Every station shows the machine from the plant's own listing with its original photographs.</span></div>
-    <div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="9" width="5" height="6" rx="1"/><rect x="9.5" y="9" width="5" height="6" rx="1"/><rect x="16.5" y="9" width="5" height="6" rx="1"/><path d="M7.5 12h2M14.5 12h2"/></svg><b>Placed in process order</b><span>Machines are grouped into halls and complete production lines, station by station, in the order the product moves.</span></div>
-    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg><b>Gaps made visible</b><span>Where the listing has no machine for a step, the station is marked NOT AVAILABLE instead of being left out.</span></div>
-  </div>
+  <section class="mviews mband" aria-labelledby="mv-title">
+    <div class="mvh"><div class="eyebrow">Inside every plant</div><h2 id="mv-title">Five connected views</h2><p>The same machines, from the site plan down to a single station.</p></div>
+    <nav class="mvlist" id="h-caps" aria-label="Plant views"></nav>
+  </section>
 
   <footer class="hfoot">
-    <div><div class="brand2"><i></i>Plant Machinery Portal</div><p>Machine data and photographs come from the plants' public equipment listings. Line groupings, station assignments, equipment categories and the not-available list are an engineering assessment, not part of the listings. Availability, condition and terms are to be confirmed with each seller.</p></div>
-    <nav aria-label="Plants" id="h-footnav"></nav>
+    <div class="hf-top">
+      <div class="hf-brand"><div class="brand2"><i></i>Plant Machinery Portal</div><p>Three complete production plants, documented hall by hall and line by line with the original photographs of their machines.</p></div>
+      <nav class="hf-col" aria-label="Plants"><b>Plants</b><span class="hf-col" id="h-footnav"></span></nav>
+      <nav class="hf-col" aria-label="Views"><b>Views</b><span class="hf-col" id="h-footviews"></span></nav>
+    </div>
+    <div class="hf-bot"><p>Machine data and photographs come from the plants' public equipment listings. Line groupings, station assignments, equipment categories and the not-available list are an engineering assessment, not part of the listings. Availability, condition and terms are to be confirmed with each seller.</p></div>
   </footer>
 </section>
 
@@ -560,46 +534,26 @@ document.addEventListener('error',e=>{const im=e.target;if(!im||im.tagName!=='IM
  setTimeout(()=>{if(im.getAttribute('src')!==src)return;fetch(src,{cache:'reload'}).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(b=>{if(im.getAttribute('src')===src)im.src=URL.createObjectURL(b)}).catch(()=>{if(im.getAttribute('src')===src){im.removeAttribute('src');im.src=src}})},700*n*n)},true);
 // ---------- nav ----------
 $('tabs').innerHTML=`<a href="#home">Home</a>`+D.factories.map(f=>`<a href="#${f.key}">${esc(f.short_name)}</a>`).join('');
-// ---------- home (landing page) ----------
+// ---------- home (minimalist landing page) ----------
 const HOME={
- f1:{main:['8060018',0],side:['8060005',0],hall:'smt',copy:'A complete consumer-display electronics plant: SMT lines with solder paste printing, inspection and reflow, injection molding, LED module repair and molding, IC programming, test and quality labs, robot cells, packing and warehouse.'},
- f2:{main:['6022004',0],side:['6022010',0],hall:'f2met',copy:'A complete domestic refrigerator factory, laid out along the refrigerator process: coil cutting and panel forming, sheet extrusion and liner thermoforming, evaporators and insulation panels, powder coating, cabinet and door foaming, and packing.'},
- f3:{main:['HF-1',0],side:['HF-2',1],hall:'phs',copy:'A complete hot-stamping plant for structural and safety-critical car body parts: press hardening lines from blanking through furnace, hydraulic press, 3D laser trimming, shot blasting and CMM inspection, with a deep drawing press, tool shop and robot grinding cell.'}};
+ f1:{img:'f1_main',ref:['8060018',0],cap:'Heller 1910 DCO reflow oven',line:'SMT lines, injection molding, LED module lines, IC programming, test and quality labs, robot cells and packing.'},
+ f2:{img:'hero_f2',ref:['6022004',0],cap:'Cosma side-panel forming line',line:'Panel forming, extrusion and liner thermoforming, evaporators, powder coating, cabinet and door foaming, and packing.'},
+ f3:{img:'f3_main',ref:['HF-3',0],cap:'Müller-Weingarten blanking line',line:'Press hardening lines with furnaces, blanking, 3D laser trimming, shot blasting, CMM inspection and a full tool shop.'}};
 const lotPh=(fk,[l,i])=>{const c=catBy[fk+':'+l];return c?(c.ph[i]||c.ph[0]||''):''};
 const himg=(k,fb)=>HOMEIMG[k]||fb;
-const PIN='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
 function goMap(fk,h){mapHall=h;location.hash=fk+'-map'}
-function miniMap(h){const M=MAP2D[h];if(!M)return '';const X0=Math.min(...M.items.map(i=>i[1]))-1,X1=Math.max(...M.items.map(i=>i[2]))+1,Z0=Math.min(...M.items.map(i=>i[3]))-1,Z1=Math.max(...M.items.map(i=>i[4]))+1;
- const W=320,H=200,s=Math.min(W/(X1-X0),H/(Z1-Z0)),ox=(W-(X1-X0)*s)/2,oy=(H-(Z1-Z0)*s)/2,P=(x,z)=>[ox+(x-X0)*s,oy+(z-Z0)*s];
- const its=M.items.map(([ri,x0,x1,z0,z1])=>{const a=P(x0,z0),c=P(x1,z1);const r=ri>=0?D.rows[ri]:null;return {r,x:a[0]+.6,y:a[1]+.6,w:Math.max(2,c[0]-a[0]-1.2),h:Math.max(2,c[1]-a[1]-1.2),k:KCLS(r)}});
- const lines={};its.forEach(it=>{if(it.r&&it.r.line)(lines[it.r.line]=lines[it.r.line]||[]).push(it)});
- let s2=`<svg class="m2" viewBox="0 0 ${W} ${H}" aria-hidden="true"><defs><pattern id="hatchmini" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect class="hp1" width="4" height="4"/><line class="hp2" x1="0" y1="0" x2="0" y2="4" style="stroke-width:1.4"/></pattern></defs>`;
- Object.values(lines).forEach(arr=>{arr.sort((a,b)=>a.r.step-b.r.step);s2+=`<polyline class="ar" style="stroke-width:1.2;fill:none;opacity:.7" points="${arr.map(i=>(i.x+i.w/2).toFixed(1)+','+(i.y+i.h/2).toFixed(1)).join(' ')}"/>`});
- s2+=its.map(i=>`<g class="st ${i.k}"><rect x="${i.x.toFixed(1)}" y="${i.y.toFixed(1)}" width="${i.w.toFixed(1)}" height="${i.h.toFixed(1)}" rx="1.5" style="stroke-width:1${i.k==='na'?';fill:url(#hatchmini)':''}"/></g>`).join('');
- return s2+'</svg>'}
 function renderHome(){
- const fx=D.factories;
- $('h-plants').innerHTML=fx.map(f=>`<a href="#${f.key}"><b>${esc(f.name)}</b><span>${esc(f.place)}</span></a>`).join('');
- const col=[['f3',['HF-1',0]],['f2',['6022004',0]],['f1',['8060005',0]]];
- $('h-collage').innerHTML=col.map(([fk,ref],i)=>`<figure><a href="#${fk}" aria-label="Open ${esc(F[fk].name)}"><img src="${himg('hero_'+fk,lotPh(fk,ref))}" alt="${esc(F[fk].name)}" ${i===0?'fetchpriority="high"':'loading="lazy"'}></a><figcaption><span>${esc(F[fk].short_name)} · ${esc(F[fk].place.split(',').pop().trim())}</span></figcaption></figure>`).join('');
- $('plants').innerHTML=fx.map(f=>{const h=HOME[f.key];return `<article class="card prow">
-  <div class="pmedia"><a href="#${f.key}" aria-label="Open ${esc(f.name)}"><img src="${himg(f.key+'_main',lotPh(f.key,h.main))}" alt="Machine at the ${esc(f.name)}" loading="lazy"></a><a href="#${f.key}-machines" aria-label="Machines and photos of the ${esc(f.name)}"><img src="${himg(f.key+'_side',lotPh(f.key,h.side))}" alt="" loading="lazy"></a><a href="${PAGE3D(h.hall)}" aria-label="Open ${esc(H[h.hall].name)} in 3D"><img src="${PREV(h.hall)}" alt="3D view of ${esc(H[h.hall].name)}" loading="lazy"><span class="bdg">LIVE 3D</span></a></div>
-  <div class="ptext"><span class="ptag">${esc(f.tag)}</span><h2>${esc(f.name)}</h2><div class="ploc">${PIN}${esc(f.place)}</div><p>${esc(h.copy)}</p>
-   <div class="hl">Halls</div><div class="hchips">${f.halls.map(x=>`<a href="#${f.key}-map" data-mh="${x}">${esc(H[x].name)}</a>`).join('')}</div>
-   <div class="row"><a class="btn" href="#${f.key}">Open plant →</a><a class="btn2" href="#${f.key}-map">2D station map</a><a class="btn2" href="#${f.key}-flow">Flow</a><a class="btn2" href="#${f.key}-3d">3D halls</a></div></div></article>`}).join('');
- document.querySelectorAll('#plants [data-mh]').forEach(a=>a.onclick=e=>{e.preventDefault();const h=a.dataset.mh;goMap(D.factories.find(f=>f.halls.includes(h)).key,h)});
- const fl=D.rows.filter(r=>r.hall==='smt'&&r.line===1&&r.ph.length).sort((a,b)=>a.step-b.step).slice(0,3);
- const sheet=(catBy['f1:8060018']||{}).sheet;
- const caps=[
-  {t:'Plant layout',d:'The site plan of every plant, with each hall shown from above as built in 3D.',href:'#f2-layout',l:'Refrigerator plant →',v:`<img src="${TOPV('f2met')}" alt="" loading="lazy">`},
-  {t:'2D station map',d:'Each hall drawn to scale: every station where its machine stands, numbered in process order.',href:'#f1-map',l:'LED module hall →',v:miniMap('led'),mh:'led'},
-  {t:'Flow with original photos',d:'Every line as a row of stations, with the machine photograph at each step.',href:'#f1-flow',l:'SMT lines →',v:`<span class="fl3">${fl.map(r=>`<img src="${r.ph[0]}" alt="" loading="lazy">`).join('<i>→</i>')}</span>`},
-  {t:'Live 3D halls',d:'Walk each hall in 3D, run the process tour of a line and tap any machine for its details.',href:'#f1-3d',l:'Open the 3D halls →',v:`<img src="${PREV('smt')}" alt="" loading="lazy">`},
-  {t:'Machine sheets',d:'All original photographs, catalogue sheets, specifications and the lines each machine serves.',href:'#f1-machines',l:'Machines & photos →',v:`<img src="${sheet||lotPh('f1',['8060005',0])}" alt="" loading="lazy" style="object-fit:${sheet?'contain':'cover'};background:#fff">`}];
- $('h-caps').innerHTML=caps.map((c,i)=>`<a class="card cap" href="${c.href}" data-i="${i}"><span class="cv">${c.v}</span><span class="cb"><b>${c.t}</b><span>${c.d}</span><em>${c.l}</em></span></a>`).join('');
- document.querySelectorAll('#h-caps [data-i]').forEach(a=>{const c=caps[+a.dataset.i];if(c.mh)a.onclick=e=>{e.preventDefault();goMap('f1',c.mh)}});
- $('h-footnav').innerHTML=fx.map(f=>`<a href="#${f.key}">${esc(f.name)}</a>`).join('');
- $('h-explore').onclick=()=>$('h-plantsec').scrollIntoView({behavior:'smooth',block:'start'})}
+ $('plants').innerHTML=D.factories.map((f,i)=>{const h=HOME[f.key];return `<a class="mplant" href="#${f.key}"><span class="mimg"><img src="${himg(h.img,lotPh(f.key,h.ref))}" alt="${esc(h.cap)}, ${esc(f.name)}" ${i===0?'fetchpriority="high"':'loading="lazy"'}><span class="mcap">${esc(h.cap)}</span></span><span class="mmeta"><span class="mno">${String(i+1).padStart(2,'0')}</span><span class="mloc">${esc(f.place)}</span></span><span class="mname">${esc(f.name)}</span><span class="mdesc">${esc(h.line)}</span><span class="mgo">Open plant <i aria-hidden="true">→</i></span></a>`}).join('');
+ const views=[['Plant layout','The site plan, with every hall seen from above as built in 3D','#f2-layout'],
+  ['2D station map','Each hall drawn to scale, stations numbered in process order','#f1-map','led'],
+  ['Flow','Every line as a row of stations with the original machine photographs','#f1-flow'],
+  ['Live 3D halls','Walk each hall, run the process tour and tap any machine','#f1-3d'],
+  ['Machine sheets','Photographs, catalogue sheets, specifications, machine list and brochure','#f1-machines']];
+ $('h-caps').innerHTML=views.map(([n,d,href],i)=>`<a class="mv" href="${href}" data-i="${i}"><em>${String(i+1).padStart(2,'0')}</em><b>${n}</b><span>${d}</span><i aria-hidden="true">→</i></a>`).join('');
+ $('h-footviews').innerHTML=views.map(([n,,href],i)=>`<a href="${href}" data-i="${i}">${n}</a>`).join('');
+ document.querySelectorAll('#h-caps [data-i],#h-footviews [data-i]').forEach(a=>{const v=views[+a.dataset.i];if(v[3])a.onclick=e=>{e.preventDefault();goMap('f1',v[3])}});
+ $('h-footnav').innerHTML=D.factories.map(f=>`<a href="#${f.key}">${esc(f.name)}</a>`).join('');
+ $('h-explore').onclick=()=>$('h-plants').scrollIntoView({behavior:'smooth',block:'start'})}
 // ---------- plant pages ----------
 const SUBS=[['overview','Overview'],['layout','Plant layout'],['map','2D station map'],['flow','Flow'],['3d','3D halls'],['categories','Equipment categories'],['machines','Machines & photos'],['list','Machine list'],['brochure','Brochure']];
 let curF=null,curSub='overview';
