@@ -67,7 +67,7 @@ body.is-home main.wrap{display:none}
 .hin{max-width:1360px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 /* hero */
 .hx{background:var(--hx-bg);color:var(--hx-ink)}
-.hx-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(36px,4.5vw,72px);align-items:center;padding-block:clamp(40px,6vw,88px) clamp(48px,6vw,88px);min-height:min(calc(100svh - 63px),880px)}
+.hx-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(36px,4.5vw,72px);align-items:center;padding-block:clamp(28px,min(6vw,7vh),88px) clamp(48px,6vw,88px);min-height:min(calc(100svh - 63px),880px)}
 .hx-copy{min-width:0}
 .hx h1{font:600 clamp(40px,4.1vw,62px)/1 var(--f-disp);letter-spacing:-.022em;margin:0;text-wrap:balance}
 .hx-lede{font-size:clamp(16.5px,1.25vw,18.5px);line-height:1.62;color:var(--hx-mut);max-width:42ch;margin:28px 0 0}
@@ -637,7 +637,7 @@ const med=a=>{const s=a.slice().sort((x,y)=>x-y);return s[s.length>>1]};
 function hxSVG(fk,anim,k){const h=HXH[fk],M=MAP2D[h],fl=M.floor;const box=$('hx-draw');
  const cw=Math.max(260,box.clientWidth||640),wide=innerWidth>1080;
  const hw=fl.x1-fl.x0,hd=fl.z1-fl.z0,rot=hd>hw*1.25,Wm=rot?hd:hw,Dm=rot?hw:hd;
- const PL=30,PT=30,PR=4,PB=4;const maxH=wide?Math.max(340,Math.min(620,innerHeight-63-230)):1e9;
+ const PL=30,PT=30,PR=4,PB=4;const maxH=wide?Math.max(450,Math.min(620,innerHeight-63-230)):1e9;
  const S=Math.min((cw-PL-PR)/Wm,(maxH-PT-PB)/Dm),DW=Wm*S,DH=Dm*S,VW=Math.ceil(PL+DW+PR),VH=Math.ceil(PT+DH+PB);box.style.height=wide?Math.round(maxH)+'px':'';
  const P=(x,z)=>rot?[PL+(z-fl.z0)*S,PT+(fl.x1-x)*S]:[PL+(x-fl.x0)*S,PT+(z-fl.z0)*S];
  let s=`<svg class="hxs${anim?' anim':''}" style="--k:${k}" width="${VW}" height="${VH}" viewBox="0 0 ${VW} ${VH}" role="img" aria-label="Floor plan of the ${esc(H[h].name)}, drawn to scale from the 3D model: ${f1(Wm)} by ${f1(Dm)} metres">`;
